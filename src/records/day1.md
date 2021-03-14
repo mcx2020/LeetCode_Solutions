@@ -6,15 +6,47 @@
 
 ## 解答
 
+
+### Java
+
 **面试题 01.03. URL化**
+
+```Java
+class Solution {
+    public String replaceSpaces(String S, int length) {    
+        char[] ch = new char[length * 3];
+        int index = 0;
+        for (int i = 0; i < length; i++) {
+            char c = S.charAt(i);
+            if (c == ' ') {
+                ch[index++] = '%';
+                ch[index++] = '2';
+                ch[index++] = '0';
+            } else {
+                ch[index] = c;
+                index++;
+            }
+        }
+        return new String(ch, 0, index);
+    }
+}
 ```
+```Java
+class Solution {
+    public String replaceSpaces(String S, int length) {
+        return S.substring(0,length).replace(" ","%20");
+    }
+}
+```
+```JavaScript
 const replaceSpaces = function(S, length) {
     return encodeURIComponent(S.substring(0,length))
 };
 ```
 
+
 **1528. 重新排列字符串**
-```
+```JavaScript
 const restoreString = function(s, indices) {
     const array = []
     for(let i = 0;i<indices.length;i++){
@@ -23,6 +55,7 @@ const restoreString = function(s, indices) {
     return array.join('')
 }
 ```
+
 
 ## 总结：
 
