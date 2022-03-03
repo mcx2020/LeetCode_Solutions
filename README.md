@@ -1,2 +1,3 @@
-# LeetCode_Solutions
-记录自己的leetcode打卡
+# LeetCode
+
+记录 LeetCode
