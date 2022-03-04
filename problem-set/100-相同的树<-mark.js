@@ -14,7 +14,7 @@ const isSameTree = (p, q) => {
   return isSameTree(p.left, q.left) && isSameTree(p.right, q.right)
 }
 
-// 循环实现
+// 循环实现，不会有调用栈溢出的风险了
 const isSameTree2 = (p, q) => {
   let stack = []
   stack.push(p, q)
